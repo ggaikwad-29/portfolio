@@ -67,11 +67,6 @@ const host = process.env.HOST || "localhost";
 
 // reusePort is not supported on Windows, so only enable on non-Windows platforms
 // const reusePort = process.platform !== "win32";
-  server.listen({
-    port,
-    host,
-    // reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
-  });
 })();
+
+export default app
