@@ -20,7 +20,6 @@ export default function Projects() {
       description: "Developed an end-to-end ML system for food recognition and calorie tracking using CNNs, MLPs, and RNNs. Achieved 73% classification accuracy and reduced calorie estimation error to 164 kcal MAE. Deployed via Flask APIs and Streamlit for real-time user interaction.",
       technologies: ["Python", "PyTorch", "TensorFlow", "OpenCV", "Flask", "Streamlit"],
       githubUrl: "https://github.com/ggaikwad-29/Advanced-Food-Recognition-and-Calorie-Tracking-System-Using-Machine-Learning",
-      liveUrl: "https://demo.objectdetection.com",
       category: "Machine Learning"
     },
     {
@@ -42,7 +41,6 @@ export default function Projects() {
       description: "Develop CNN based version to design and develop a sturdy and correct CNN version mainly tailored for crop ailment detection. Achieve high detection accuracy. The objective is to achieve excessive accuracy in detecting crop diseases and providing customized treatment recommendations and personalized therapy tips based at the recognized disease.",
       technologies: ["Python", "TensorFlow", "Keras", "Scikit-learn", "OpenCV", "Streamlit"],
       githubUrl: "https://github.com/ggaikwad-29/PLANT-DISEASE-DETECTION-AND-PESTIDICDE-RECOMMENDATION-USING-MACHINE-LEARNING",
-      liveUrl: "https://analytics-dashboard.com",
       category: "Machine Learning"
     }
   ];
