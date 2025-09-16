@@ -1,13 +1,21 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "noEmit": false,
-    "outDir": "dist",
+    "incremental": true,
     "module": "ESNext",
-    "moduleResolution": "node",
-    "target": "ES2020",
-    "declaration": false,
-    "allowImportingTsExtensions": false
+    "moduleResolution": "bundler",
+    "target": "ESNext",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "types": ["node", "vite/client"],
+    "paths": {
+      "@/*": ["./client/src/*"],
+      "@shared/*": ["./shared/*"]
+    }
   },
-  "include": ["server/**/*", "shared/**/*"]
+  "include": ["client/src/**/*", "shared/**/*", "server/**/*"],
+  "exclude": ["node_modules", "dist", "build"]
 }
