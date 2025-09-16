@@ -60,7 +60,7 @@ export default function Hero() {
         </div>
         
         <div className='lg:ml-12'>
-          <img src="../../images/gayatri.jpeg" height="500" width="500"  alt="my-picture"/>
+          <img src="./gayatri.jpeg" height="500" width="500"  alt="my-picture"/>
         </div>
       </div>
     </section>
