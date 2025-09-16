@@ -1,5 +1,5 @@
-import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
+import { Badge } from '../components/ui/badge';
+import { Card } from '../components/ui/card';
 import { Code, Database, Brain, GitBranch, Cloud, Cpu, BarChart, Zap } from 'lucide-react';
 
 interface SkillCategory {

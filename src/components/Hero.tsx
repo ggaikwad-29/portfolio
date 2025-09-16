@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '../components/ui/button';
+import { Card } from '../components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar';
 import { Download, MapPin, Mail } from 'lucide-react';
 import Typewriter from 'typewriter-effect';
 
