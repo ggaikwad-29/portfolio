@@ -1,6 +1,6 @@
 import http from "http";
-import app from "./index";
-import { setupVite } from "./vite";
+import app from "./server/index";
+import { setupVite } from "./server/vite";
 
 const port = parseInt(process.env.PORT || "5000", 10);
 const host = process.env.HOST || "localhost";

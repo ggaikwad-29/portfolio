@@ -1,41 +1,31 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { registerRoutes } from "./routes.js";       // <-- .js extension for compiled output
+import { setupVite, serveStatic, log } from "./vite.js";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Simple request logger for /api routes
+// Logging middleware
 app.use((req, res, next) => {
   const start = Date.now();
-  const path = req.path;
   let capturedJsonResponse: Record<string, any> | undefined = undefined;
-
   const originalResJson = res.json;
   res.json = function (bodyJson, ...args) {
     capturedJsonResponse = bodyJson;
     return originalResJson.apply(res, [bodyJson, ...args]);
   };
-
   res.on("finish", () => {
-    const duration = Date.now() - start;
-    if (path.startsWith("/api")) {
-      let logLine = `${req.method} ${path} ${res.statusCode} in ${duration}ms`;
-      if (capturedJsonResponse) {
-        logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
-      }
-      if (logLine.length > 80) {
-        logLine = logLine.slice(0, 79) + "…";
-      }
+    if (req.path.startsWith("/api")) {
+      let logLine = `${req.method} ${req.path} ${res.statusCode} in ${Date.now() - start}ms`;
+      if (capturedJsonResponse) logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
+      if (logLine.length > 80) logLine = logLine.slice(0, 79) + "…";
       log(logLine);
     }
   });
-
   next();
 });
 
-// Async setup for routes + vite in dev
 (async () => {
   await registerRoutes(app);
 
@@ -47,12 +37,10 @@ app.use((req, res, next) => {
   });
 
   if (app.get("env") === "development") {
-    // only needed for local dev with vite
-    await setupVite(app);
+    // Local dev will call setupVite with dev-server.ts
   } else {
     serveStatic(app);
   }
 })();
 
-// ✅ Vercel will use this export
 export default app;
