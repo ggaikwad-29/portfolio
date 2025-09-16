@@ -44,8 +44,10 @@ export default function Hero() {
               className="gap-2"
               data-testid="button-download-resume"
             >
-              <Download className="w-4 h-4" />
-              Download Resume
+              <a href='https://docs.google.com/document/d/1qwIvbvA45XE0PQt9eOA-O-IIsF3odBis/edit?usp=drive_link&ouid=102367585661517269814&rtpof=true&sd=true'>
+                <Download className="w-4 h-4" />
+                Download Resume
+              </a>
             </Button>
             <Button 
               variant="outline"
