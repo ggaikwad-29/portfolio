@@ -45,7 +45,7 @@ export default function ResearchPapers() {
       conference: "International Journal of Advanced Technology in Engineering and Science",
       year: 2022,
       status: "published",
-      url: "http://www.ijates.com/images/short_pdf/1649756560_T1038.pdf",
+      url: "https://www.ijates.com/images/short_pdf/1649756560_T1038.pdf",
       keywords: ["VANET", "5G", "Intelligent Transportation System (ITS)", "Traffic Management", "Trust Model", "IoT", "Connected Vehicles"]
     }
   ];
